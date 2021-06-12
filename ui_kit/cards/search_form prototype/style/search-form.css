@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+/*Крупные мазки*/
+
+.title{
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1F2041;
+}
+
+.wrapper{
+    width: 380px;
+    height: 374px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.innerWrapper{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    flex-direction: column;
+}
+
+/*Css-анимация, класс, псевдоэлементы и псевдоклассы*/
+
+.input_content:hover, .bottom:focus {
+    background-color: rgb(124, 175, 223);
+}
+
+/* .workfield:hover, .bottom:focus {
+    background-color: rgb(124, 175, 223);
+} */
+
+/*Тонкие мазки, флексы*/
+
+.part{
+    width: 100%;
+    height: 50%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1F2041;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bottom .item{
+    width: 100%;
+    height: 50%;
+}
+
+.top{
+    display: flex;
+}
+
+.top .item{
+    width: 50%;
+    height: 100%;
+}
+.button{ 
+    width: 100%;
+    height: 44px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-align: center;
+}
+.button:after {
+    content:url(./arrow_forward.png);
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+}
+
+.input_content{
+    width: 80%;
+}
+
+
+
+
+  .input_content::after {
+   content: "!!!"
+  }
+  input::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  .workfield::after{
+      content:url(./expand_more.png); 
+  }
+  .workfield{
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    cursor: pointer;
+  }
+  input{
+      border: none;
+  }

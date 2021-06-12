@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+.calendar{
+    width: 320px;
+    height: 369px;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+}
+.calenadar__header{
+    width: 279.13px;
+    height: 24px;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    text-align: center;
+    color: #1F2041;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.calenadar__header:after {
+    content:url(./arrow_forward.png);
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.calenadar__header:before {
+    content:url(./arrow_back.png);
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.calendar__table{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: #BC9CFF;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 20.44px;
+}
+.row{
+    width: 39.88px;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px
+}
+.calendar__footer{
+    width: 280px;
+    height: 35px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #BC9CFF;
+    display: flex;
+    justify-content: space-between;
+}
+.calendar__footer-clean{
+    width: 75px;
+    height: 15px;
+}
+.calendar__footer-use{
+    width: 84px;
+    height: 15px;
+}
+/*Активные классы*/
+.calendar__month_previous{
+    color: rgba(31, 32, 65, 0.25);
+}
+.calendar__day_active{
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 22px;
+    color: #FFFFFF;
+}
+.calendar__interval_point{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    color: #FFFFFF;
+}
+.calendar__interval_between{
+    color: aqua;
+}

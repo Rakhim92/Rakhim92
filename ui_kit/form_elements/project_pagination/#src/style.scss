@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Montserrat';
+  background-color: #888;
+}
+.pagination {
+  max-width: 400px;
+  min-width: 300px;
+  width: 100%;
+  height: 380px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+.pagination .tableList {
+  min-height: 250px;
+  text-indent: 20px;
+}
+//Строчки
+.tableList .objectBlock {
+  position: relative;
+  background-color: rgba(72, 144, 226, 0.774);
+  color: rgb(26, 25, 25);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+//Кнопки вперед/назад
+.pageButton {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  // background-color: red;
+  border-radius: 22px;
+  // position: relative;
+}
+
+//Кнопки страниц пагинатора
+.clickPageNumber {
+  width: 40px;
+  height: 40px;
+  // padding-top: 10px;
+}
+//Пагинатор, целиком
+.pagination-block {
+  text-align: center;
+  display: flex;
+  width: 280px;
+  height: 40px;
+}
+//Кнопки страниц пагинатора
+.pagination-block span {
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  border-radius: 22px;
+}
+//Кнопки вперед-назад
+.pagination-block .pageButton {
+  background-color: rgb(156, 9, 58);
+  color: rgba(18, 46, 207, 0.774);
+  position: relative;
+}
+.pagination-block .pageButton::after {
+  
+  position: absolute;
+  // width: 100%;
+  left: 8px;
+  bottom: 5px;
+}
+#button_next::after {
+  content: url("./assets/arrow_forward.png");
+}
+#button_prev::after {
+  content: url("./assets/arrow_back.png");
+}
+.pagination-block span:hover {
+  cursor: pointer;
+}
+.halfOpacity {
+  opacity: 0.5;
+}
+.zeroOpacity {
+  opacity: 0;
+}
+.note {
+  padding-top: 20px;
+}
+
+
+.clickPageNumber {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+}
+.active {
+  color: #66D2EA;
+}
+.selected_page {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  opacity: 1;
+  color: white;
+}
+.clickPageNumber {
+  opacity: 0.5;
+}
+  

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search-form</title>
+    <link rel="stylesheet" type="text/css" href="./style/search-form.css">
+</head>
+<body>
+    <div class="wrapper">
+       
+
+        <div class="title">
+            <p>Найдем номера под ваши пожелания</p>
+        </div>
+        
+        <div class="innerWrapper">
+           <section class="top part">
+                
+                <label class="item">
+                    <div class="text">прибытие</div>
+                    <div class="workfield">
+                        <input type="text" class="input_content" placeholder="ДД.ММ.ГГГГ">
+                    </div>
+                </label>
+                
+                <label class="item">
+                    <div class="text">отбытие</div>
+                    <div class="workfield">
+                        <input type="text" class="input_content" placeholder="ДД.ММ.ГГГГ">
+                    </div>
+                </label>    
+            </section>
+            
+           <label class="bottom part">
+                <div class="text">гости</div>
+                <div class="workfield">
+                    <input list="myINPUT" type="text" class="input_content" placeholder="Сколько гостей?">
+                        <datalist id="myINPUT">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </datalist>
+                </div>
+            </label>
+        </div>
+                
+        <form>
+            <button class="button" type="submit">подобрать номер <img src="./style/arrow_forward.png"></button>
+        </form>
+                      
+    </div>
+<script src="./script/search-form.js"></script>   
+</body>
+</html>
+
+
+
+
+
+
+   
+
+                    
+
+
+               

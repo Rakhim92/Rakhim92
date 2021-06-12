@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Найдем номера под ваши пожелания
+        link(rel="stylesheet" type="text/css" href="./searching.css")
+    body
+        .searching-menu
+            include ..templates/template.pug
+            //-Надпись Найдем номера под ваши пожелания
+            .searching-menu__title.project__geometry Найдем номера под ваши пожелания
+            //-Выбор даты въезда и выезда
+            .schedule.project__geometry
+                .schedule__arriving
+                    +workPlate('въезд', 'ДД.ММ.ГГГГ')
+                .schedule__departure
+                    +workPlate('выезд', 'ДД.ММ.ГГГГ')
+            //-Выбор количества гостей
+            .guests.project__geometry
+                +workPlate('гости', 'Сколько гостей', 'guests_size_big')
+            //-Стандартная кнопка "подобрать номер" 
+            button.project__button.project__geometry подобрать номер

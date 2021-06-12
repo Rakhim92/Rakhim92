@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+.wrapper{
+    width: 768px;
+    height: 367px;
+}
+/* .main{
+    padding-left: 104px;
+    padding-right: 104px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+} */
+.first{
+    width: 105.69px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.first_logo_circle{
+    width: 40px;
+    height: 40px;
+}
+.first_logo_text{
+    width: 53.19px;
+    height: 12.95px;
+}
+
+.second{
+    width: 560px;
+    height: 18px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+.third{
+    width: 112px;
+    height: 24px;
+    display: flex;
+}
+.third_logo{
+    width: 20px;
+    height: 20px;
+}

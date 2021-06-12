@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Меню регистрации аккаунта
+        link(type="text/css" rel="stylesheet" href="./registration.css")
+    body
+        .registration-menu
+            include ..templates/template.pug
+            //-Надпись "Регистрация аккаунта"
+            .registration-menu__header.project__geometry Регистрация аккаунта
+            //-Здесь вводят свое имя и фамилию   
+            .namesurname.project__geometry
+                .workfield
+                   +workField("Имя", "Фамилия")
+            //-Выбор пола
+            .genderbox.project__geometry
+                .man.gender
+                    input.boy(type="radio" value="1" checked)
+                    label(for="boy") мужчина
+                .female.gender
+                    input.girl(type="radio" value="2")
+                    label(for="girl") женщина
+            //-Здесь вводят дату рождения
+            .datebirth.project__geometry
+                .textboard дата рождения
+                .date.registration-menu__person
+                    input.input(type="text" placeholder="ДД.ММ.ГГГГ")
+            //-Данные для входа в сервис. Здесь вводят Email и пароль
+            .registration-menu__entrance-dates.project__geometry
+                .textboard данные для входа в сервис
+                .workfield
+                    +workField("Имя", "Фамилия")     
+            //-Здесь можно включить/выключить получение спецпредложения
+            .registration-menu__specialsuggest.project__geometry
+                .registration-menu__switcher
+                .registration-menu__notation Получать спецпредложения
+            //-Стандартная кнопка "перейти к оплате"
+            button.project__button.project__geometry перейти к оплате
+            //-Альтернативная кнопка "войти"
+            .registration-menu__footer.project__geometry
+                .account Уже есть аккаунт на Toxin
+                button.enter войти
