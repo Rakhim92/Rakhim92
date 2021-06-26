@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title colors-types
+        link(rel="stylesheet" type="text/css" href="template.css")
+        link(rel="stylesheet" type="text/css" href="colors-types.css")
+    body 
+        .colors-types__wrapper
+            .colors-types__colors
+                each val, key in {'Dark Shade 100%': '#1F2041', 'Dark Shade 75%': '#1F2041', 'Dark Shade 50%': '#1F2041', 'Dark Shade 25%': '#1F2041', 'Dark Shade 5%': '#1F2041', 'Purple': '#BC9CFF', 'Green': '#6FCF97'}
+                    .colors-types__item
+                        if key == 'Dark Shade 100%'
+                            .colors-types__one
+                        else if key == 'Dark Shade 75%'
+                            .colors-types__two
+                        else if key == 'Dark Shade 50%'
+                            .colors-types__three 
+                        else if key == 'Dark Shade 25%'
+                            .colors-types__four
+                        else if key == 'Dark Shade 5%'
+                            .colors-types__five 
+                        else if key == 'Purple'
+                            .colors-types__six
+                        else if key == 'Green'
+                            .colors-types__seven 
+                        .colors-types__note
+                            p=key
+                            p=val
+            .colors-types__types
+                .color-types__type-one
+                    span.color-types__pic1
+                        img(src='./assets/H1.png' alt='')
+                    span.color-types__text1 This one is the sub-section or widget title
+                .color-types__type-one
+                    span.color-types__pic1
+                        img(src='./assets/H2.png' alt='')
+                    span.color-types__text1 Next one is the item title inside widgets
+                .color-types__type-one
+                    span.color-types__pic1
+                        img(src='./assets/H3.png' alt='')
+                    span.color-types__text1 This is a label or CTA text
+                .color-types__type-one
+                    span.color-types__pic1
+                        img(src='./assets/Body.png' alt='')
+                    span.color-types__text1 This is the body text which is used for most of the design, like paragraphs, lists, etc.

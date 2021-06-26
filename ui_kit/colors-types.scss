@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+.colors-types__wrapper {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 28px;
+    display: flex;
+}
+.colors-types__colors {
+    width: 500px;
+}
+.color-types__pic1 {
+    width: 30px;
+    height: 30px;
+    padding-right: 30px;
+}
+.colors-types__item {
+    display: flex;
+    margin: 20px;
+}
+.colors-types__note {
+    height: 56px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.color-types__type-one {
+    margin: 50px;
+}
+p {
+    margin: 0;
+}
+@mixin palette($color) {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background: $color;
+}
+
+.colors-types__one {
+    @include palette(rgba(31, 32, 65, 1))
+}
+.colors-types__two {
+    @include palette(rgba(31, 32, 65, 0.75))   
+}
+.colors-types__three {
+    @include palette(rgba(31, 32, 65, 0.5))   
+}
+.colors-types__four {
+    @include palette(rgba(31, 32, 65, 0.25))   
+}
+.colors-types__five {
+    @include palette(rgba(31, 32, 65, 0.05))   
+}
+.colors-types__six {
+    @include palette(rgba(188, 156, 255, 1))   
+}
+.colors-types__seven {
+    @include palette(rgba(111, 207, 151, 1))   
+}
+.color-types__text1 {
+    padding-left: 3opx;
+}

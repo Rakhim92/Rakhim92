@@ -1,0 +1,117 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title headers-footers
+        link(rel="stylesheet" type="text/css" href="template.css")
+        link(rel="stylesheet" type="text/css" href="headers-footers.css")
+    body 
+        include ./templates/template.pug
+        mixin footerFirst
+            footer.footer1__footer
+            .footer1__main
+                ul.footer1__column.footer1__first
+                    li.footer1__row
+                        img(src='assets/TOXIN.png' alt='')
+                    li.footer1__row Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+                ul.footer1__column.footer1__second
+                    span.footer1__uppercase(href='#') навигация
+                    each name, index in ['О нас', 'Новости', 'Служба поддержки', 'Услуги']
+                        li.footer1__row
+                            a(class="footer1__link" href="#")=name
+                ul.footer1__column.footer1__third
+                    span.footer1__uppercase(href='#') о нас
+                    each name, index in ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']           
+                        li.footer1__row
+                            a(class="footer1__link" href="#")=name
+                ul.footer1__column.footer1__fourth
+                    span.footer1__uppercase(href='#') Служба поддержки
+                    each name, index in ['Соглашения', 'Сообщества', 'Связь с нами']
+                        li.footer1__row
+                            a(class="footer1__link" href="#")=name
+                ul.footer1__column.footer1__fifth
+                    span.footer1__uppercase(href='#') Подписка
+                    each name, index in ['Получайте специальные предложения и новости сервиса', '']
+                        if index == 1
+                            li.footer1__row
+                                +inputBig('', 'Email', '')
+                        else
+                            li.footer1__row
+                                a(class="footer1__link" href="#")=name
+            .footer1__subscribe
+                span.footer1__copyrights Copyright © 2018 Toxin отель. Все права защищены.
+                span.footer1__social_networks
+                    span.footer1__icon
+                        img(src='./assets/twitter.png' alt='')
+                    span.footer1__icon
+                        img(src='./assets/facebook.png' alt='')
+                    span.footer1__icon
+                        img(src='./assets/instagram.png' alt='')
+        mixin footerSecond
+            footer.footer2__footer
+                .footer2__main
+                    .footer2__logo
+                        img(src='assets/TOXIN.png' alt='')
+                    .footer2__copyrights Copyright © 2018 Toxin отель. Все права защищены.
+                    .footer2__social_networks
+                        span.footer2__icon
+                            img(src='assets/twitter.png' alt='')
+                        span.footer2__icon
+                            img(src='assets/facebook.png' alt='')
+                        span.footer2__icon
+                            img(src='assets/instagram.png' alt='')
+        mixin headerFirst
+            header.header1__header
+                .header1__logo
+                    a(href='#')
+                    img.vector(src='assets/Vector.png')
+                nav.header1__menu
+                    ul.header1__list
+                        li.header1__item
+                            a.header1__link(href='#')
+                        li.header1__item.header1__about
+                            a.header1__link.header1__about(href='#') О нас
+                        li.header1__item.header1__services
+                            a.header1__link(href='#') Услуги
+                        li.header1__item
+                            a.header1__link(href='#') Вакансии
+                        li.header1__item
+                            a.header1__link(href='#') Новости
+                        li.header1__item.header1__agreements
+                            a.header1__link(href='#') Соглашения
+                        li.header1__item
+                            a.header1__link(href='#')
+                            button.header1__btnEnter Войти
+                        li.header1__item
+                            a.header1__link(href='#')
+                            button.header1__btnReg Зарегистрироваться 
+        mixin headerSecond
+            header.header2__header
+                .header2__logo
+                    a(href='#')
+                    img.vector(src='assets/Vector.png')
+                nav.header2__menu
+                    ul.header2__list
+                        li.header2__item-menu
+                            a.link-menu(href='#')
+                        li.header2__item-menu.header2__about-us
+                            a.link-menu.about-us(href='#') О нас
+                        li.header2__item-menu.header2__services
+                            a.link-menu(href='#') Услуги
+                        li.header2__item-menu
+                            a.link-menu(href='#') Вакансии
+                        li.header2__item-menu
+                            a.link-menu(href='#') Новости
+                        li.header2__item-menu.header2__agreements
+                            a.link-menu(href='#') Соглашения
+                        li.header2__item-menu
+                            span.header2__close
+                        li.header2__item-menu
+                            a.link-menu(href='#') Юлий Цезарь
+        .headers-footers__wrapper
+            +headerFirst
+            +headerSecond
+            +footerFirst
+            +footerSecond

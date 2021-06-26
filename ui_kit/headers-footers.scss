@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import './templates/template';
+
+.headers-footers__wrapper {
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    // &__item {
+    //     display: flex;
+    //     justify-content:center
+    // }
+}
+
+
+.header1 {
+    &__header{
+        width: 1440px;
+        height: 70px;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        display: flex;
+        justify-content:center
+        
+    }
+    &__list{
+        list-style-type: none;
+        display: flex;
+    }
+    &__list::before{
+        content: url(assets/TOXIN.png);
+    }
+    &__link{
+        text-decoration: none;
+        color: rgba(31, 32, 65, 0.5);  
+    }
+    &__link:visited {
+        color: #800080; /* Цвет посещённой ссылки */
+    } 
+    &__link:hover {
+        color: #800000;  
+        text-decoration: underline; 
+    }
+    &__item{
+        margin-right: 20px;
+    }
+    &__about{
+        color: rgba(23, 29, 212, 0.75);
+        font-weight: bold;
+    }
+    &__services{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    &__services::after{
+        content: url(assets/expand_more.png);
+    }
+    &__agreements::after{
+        content: url(assets/expand_more.png);
+    }
+    &__btnReg{
+        width: 196px;
+        height: 34px;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border-radius: 22px;
+        color: #FFFFFF;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: Montserrat;
+        font-size: 12px;
+        border: none;
+    }
+    &__btnEnter{
+        width: 87px;
+        height: 34px;
+        border-radius: 22px;
+        border: 2px solid #BC9CFF;
+        font-weight: bold;
+        font-size: 12px;
+        color: #BC9CFF;
+        font-family: Montserrat;
+        background-color: #FFFFFF;
+    }
+    &__btnReg:hover{
+        background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+        cursor: pointer;
+    }
+    &__btnEnter:hover{
+        background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+        cursor: pointer;
+    }
+    
+}
+
+.header2 {
+    &__header {
+        width: 1440px;
+        height: 70px;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        display: flex;
+        justify-content:center
+    }
+    &__list {
+        list-style-type: none;
+        display: flex;
+    }
+    &__list::before {
+        content: url(assets/TOXIN.png);
+    }
+    &__item-menu {
+        margin-right: 20px;
+    }
+    
+    &__about-us {
+        color: rgba(23, 29, 212, 0.75);
+        font-weight: bold;
+    }
+    &__services {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    &__services::after {
+        content: url(assets/expand_more.png);
+    }
+    &__agreements::after {
+        content: url(assets/expand_more.png);
+    }
+    
+    &__close {
+        position: absolute;
+    }
+    &__close:before {
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 1px;
+        background: rgba(31, 32, 65, 0.1);
+        transform: rotate(180deg);
+    }
+    &__list .link-menu {
+        text-decoration: none;
+        color: rgba(31, 32, 65, 0.5);  
+    }
+    &__list .link-menu {
+        color: #800080; /* Цвет посещённой ссылки */
+    } 
+    &__list.link-menu:hover {
+        color: #800000;  
+        text-decoration: underline; 
+    }
+    
+    
+}
+
+.footer1 {
+    &__footer{
+        height: 372px;
+        margin-left: 140px;
+        margin-right: 140px;
+        background: #FFFFFF;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;    
+    }
+    &__main {
+        width: 1440px;
+        display: flex;
+        box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1); 
+    }
+    &__column{
+        width: 20%;
+        height: 100%;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+    }
+    &__link {
+        text-decoration: none;
+        color: rgba(31, 32, 65, 0.75);
+    }
+    &__link:hover {
+        color: rgba(31, 32, 65, 1);
+        cursor: pointer;
+    }
+    &__row{
+        margin-bottom: 20px;  
+    }
+    &__row .selected{
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #1F2041;
+        line-height: 15px;
+        margin-bottom: 21px;
+    }
+    &__signboard{
+        width: 260px;
+        height: 44px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+    }
+    &__signboard::after{
+        content:url(./arrow_forward.png);
+    }
+    &__subscribe {
+        width: 1440px;
+        height: 70px;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        margin: 20px;
+        opacity: 0.3;
+    }
+    &__icon:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+    &__uppercase {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #1F2041;
+    }
+}
+
+.footer2 {
+    &__footer {
+        width: 768px;
+        height: 367px;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;  
+    }
+    &__main {
+        padding-left: 104px;
+        padding-right: 104px;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        margin: 20px;
+        opacity: 0.3;
+    }
+    &__icon:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+    
+}
+
+
+
+

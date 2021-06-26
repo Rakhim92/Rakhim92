@@ -1,0 +1,769 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+/*Геометрия всего проекта*/
+%project__geometry {
+    width: 320px;
+    margin: {
+        left: 30px;
+        right: 30px;
+    }
+}
+
+/*Стандартная кнопка, шаблон*/
+%project__button {
+    width: 320px;
+    height: 44px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    position: relative;
+
+    &:hover {
+        background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+        cursor: pointer;
+    }
+    &:after {
+        content:url(./assets/arrow_forward.png);
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 1;
+    }
+}
+
+/*Стандартное меню, шаблон*/
+@mixin menu($width, $height){
+    width: $width;
+    height: $height;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+}
+
+/**/
+@mixin schedule(){
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        &__arriving{
+            width: 150px;
+            height: 64.44px; 
+        }
+        &__departure{
+            width: 150px;
+            height: 64.44px;     
+        }    
+}
+
+/*Стандартный инпут со стрелкой "вниз", размером 320 * 44, и текстом над инпутом*/
+.inputBig {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 64px;
+    width: 320px;   
+
+    &__textboard {
+        height: 15px;
+        padding-bottom: 5px;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #1F2041;
+    }
+    &__signboard {
+        width: 320px;
+        height: 44px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    &__signboard:hover {
+        cursor: pointer;
+    }
+    &__signboard-content {
+        width: 276px;
+        height: 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 32px;
+        box-sizing: border-box;
+        font-size: large;
+        color: green;
+        outline: none; 
+        border: none;
+    }
+    &__signboard::after {
+        content:url(./assets/expand_more.png);
+    }
+}
+
+/*Стандартный инпут со стрелкой "вниз", но размером 150 * 44, и текстом над инпутом*/
+.inputSmall {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 64.44px;
+    width: 150px;   
+
+    &__textboard{
+        height: 15px;
+        padding-bottom: 5px;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #1F2041;
+    }
+    &__signboard{
+        width: 150px;
+        height: 44px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    &__signboard:hover {
+        cursor: pointer;
+    }
+    &__signboard-content{
+        width: 106px;
+        height: 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        // padding-right: px;
+        box-sizing: border-box;
+        font-size: large;
+        color: green;
+        outline: none; 
+        border: none;
+    }
+    &__signboard::after{
+        content:url(./assets/expand_more.png);
+    }
+}
+
+/*Стандартный инпут размером 320 * 44, без текста и стрелки*/
+.inputBigwithoutArrow {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 44px;
+  width: 320px;   
+
+  &__textboard {
+      height: 15px;
+      padding-bottom: 5px;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #1F2041;
+  }
+  &__signboard {
+      width: 320px;
+      height: 44px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+  &__signboard:hover {
+      cursor: pointer;
+  }
+  &__signboard-content {
+      width: 276px;
+      height: 20px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 32px;
+      box-sizing: border-box;
+      font-size: large;
+      color: green;
+      outline: none; 
+      border: none;
+  }
+  // &__signboard::after {
+  //     content:url(./assets/expand_more.png);
+  // }
+}
+
+/*Два связанных стандартных инпутов с размером 320 * 44, без текста и стрелки*/
+.inputTwice {
+  &__person {
+      width: 320px;
+      height: 44px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      border-radius: 4px;
+  }
+  &__input-content {
+      width: 290px;
+      height: 20px;
+      padding-top: 10px;
+      padding-bottom: 2px;
+      padding-left: 5px;
+      padding-right: 10px;
+      font-size: large;
+      color: green;
+      border: none;
+      outline: none;
+  }
+}
+
+/*Дропдаун, в котором можно указать количество гостей(взрослых, детей, младенцев)*/
+.dropdown {
+  &__main {
+    width: 100%;
+    // height: 89px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+  }
+  &__footer {
+    // height: 15px;
+    // width: 299px;
+    box-sizing: border-box;
+    color: #BC9CFF;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 14px;
+    padding-right: 7px;  
+  }
+  &__btn {
+    width: 320px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+  &__contentMenu {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    width: 320px;
+    height: 159px;
+    box-sizing: border-box;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0px 10px 30px rgba(31, 32, 65, 0.05);
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1F2041;
+  }
+  &__line {
+    width: 100%;
+    height: 30px;
+  }
+  &__number {
+    position: absolute;
+    display: inline;
+    right: 50px;
+  }
+  &__unit {
+    display: inline;
+    width: 15px;
+    vertical-align: text-top;
+  }
+  &__clean {
+    opacity: 0;  
+  }
+  &__clean:hover, &__use:hover {
+    cursor: pointer;
+    color: #834df8;
+  }
+  &__show {
+    display: flex;
+  }
+  &__plus {
+    width: 30px;
+    height: 30px;
+    color: rgba(31, 32, 65, 0.5);
+    opacity: 1;
+    display: inline;
+    border: 1px solid rgba(69, 12, 83, 0.25);
+    border-radius: 22px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 250px;  
+  }
+  &__plus:hover {
+    opacity: 1;
+  }
+  &__plus:before, &__plus:after {
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    content: "";
+    height: 10px;
+    width: 2px;
+    background-color: rgb(90, 3, 44);
+  }
+  &__plus:before {
+    transform: rotate(90deg);
+  }
+  &__plus::after {
+    transform: rotate(180deg);
+  }
+  &__minus {
+    width: 30px;
+    height: 30px;
+    color: rgba(31, 32, 65, 0.5);
+    opacity: 0.3;
+    display: inline;
+    border: 1px solid rgba(97, 6, 77, 0.25);
+    border-radius: 22px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 200px;
+  }
+  &__minus:hover {
+    opacity: 1;
+  }
+  &__minus:before {
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    content: "";
+    height: 10px;
+    width: 2px;
+    background-color: blueviolet;
+    transform: rotate(90deg);
+    opacity: var(--pseudo-opacity);
+  }
+}
+
+/*Рейнджслайдер(ползунок)*/
+.range-slider {
+  &__multi-range {
+    width: 200px;
+    position: relative;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__multi-range input[type=range] {
+    box-sizing: border-box;
+    appearance: none;
+    width: 200px;
+    margin: 0;
+    padding: 0 2px;
+    /* Add some L/R padding to ensure box shadow of handle is shown */
+    overflow: hidden;
+    border: 0;
+    border-radius: 1px;
+    outline: none;
+    // background:  rgb(47, 167, 161);
+    /* Use a linear gradient to generate only the 2px height background */
+    background-size: 100% 2px;
+    pointer-events: none;
+  }
+  // linear-gradient(rgb(255, 51, 0), rgb(47, 167, 161)) 
+  &__multi-range input[type=range]:active,
+  &__multi-range input[type=range]:focus {
+    outline: none;
+  }
+  
+  &__multi-range input[type=range]::-webkit-slider-thumb {
+    height: 10px;
+    width: 15px;
+    border-radius: 28px;
+    background-color: rgb(248, 9, 9);
+    position: relative;
+    margin: 5px 0;
+    /* Add some margin to ensure box shadow is shown */
+    cursor: pointer;
+    appearance: none;
+    pointer-events: all;
+    box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+    /*
+        &::before {
+              content: ' ';
+              display: block;
+              position: absolute;
+              top: 13px;
+              left: 100%;
+              width: 2000px;
+              height: 2px;
+        }
+        */;
+  }
+  
+  &__multi-range input[type=range]:nth-child(2)::-webkit-slider-thumb {
+    background-color: rgb(114, 218, 17);	
+  }
+  
+  &__multi-range input[type=range] {
+    position: absolute;
+  }
+  
+  &__multi-range input[type=range]:nth-child(1)::-webkit-slider-thumb::before {
+    background-color: rgb(243, 21, 21);
+  }
+  
+  &__multi-range input[type=range]:nth-child(2) {
+    background: none;
+  }
+  
+  &__multi-range input[type=range]:nth-child(2)::-webkit-slider-thumb::before {
+    background-color: rgb(14, 204, 39);
+  }
+  
+  &__displays {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+}
+
+/*Радиобаттон "мужчина/женщина"*/
+.radio-buttons {
+  
+&__container {
+  /* display: block; */
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+}
+
+&__container &__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+&__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #BC9CFF;
+}
+
+&__container:hover input ~ &__checkmark {
+  background-color: #ccc;
+}
+
+&__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+&__container input:checked ~ &__checkmark:after {
+  display: block;
+}
+
+&__container &__checkmark:after {
+  top: 4px;
+  left: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  background: #8BA4F9;
+}  
+}
+
+/*Тоглбаттон(переключатель) "вкл/выкл"*/
+.toggle-buttons {
+  &__input {
+    height: 0px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 0px;
+  }
+  &__toggle label.toggle-buttons__toggle-item {
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  &__checkcross .toggle-buttons__check {
+    border-radius: 10px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: #a1a1a3;
+    transition: 0.4s ease;
+    top: 4.5px;
+    left: 4.5px;
+  }
+  &__checkcross .toggle-buttons__check:before {
+    width: 25px;
+    transform: rotate(-45deg) translate(-6px, 20px);
+  }
+  &__checkcross .toggle-buttons__check:after {
+    width: 10px;
+    transform: rotate(45deg) translate(20px, 11px);
+  }
+  &__toggle #checkcross:checked + label .toggle-buttons__check {
+    left: 22px;
+    transform: rotate(360deg);
+    background: #396cfa;
+  }
+  &__toggle #checkcross:checked + label .toggle-buttons__check:before {
+    width: 27px;
+    transform: rotate(-45deg) translate(-8px, 18px);
+  }
+  &__toggle #checkcross:checked + label .toggle-buttons__check:after {
+    width: 27px;
+    transform: rotate(45deg) translate(18px, 8px);
+  }
+  &__text {
+    width: 210px;
+    height: 24px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);  
+  }
+  &__wrapper{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/*Сердечки*/
+.like-buttons {
+&__wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    height: 100x;
+    margin: 100px;
+}
+&__frame{
+    width: 100px;
+    height: 50px;
+    border: 1px solid rgb(165, 7, 112);
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+&__heart{
+    padding: 10px;
+    cursor: pointer;
+    width: 10px;
+    color: grey;
+}
+&__counter{
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+}
+&__heart_active{
+    color: #7865ce;
+}
+
+}
+
+/*Чекбокс "Можно курить/можно с питомцами/можно пригласить гостей"*/
+.checkbox-buttons {
+  &__container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5);
+    font-family: Montserrat;
+    font-style: normal;
+  
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+}
+
+&__title {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1F2041;
+    padding-bottom: 20px;
+}
+
+
+&__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background: #FFFFFF;
+  border: 1px solid #BC9CFF;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+&__container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+&__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+&__container input:checked ~ .checkbox-buttons__checkmark:after {
+  display: block;
+}
+
+&__container .checkbox-buttons__checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: 1px solid #8BA4F9;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+} 
+}
+
+/*Пагинация*/
+.pagination {
+  &__pagination {
+    max-width: 400px;
+    min-width: 300px;
+    width: 100%;
+    height: 380px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    background-color: #888;
+    padding: 20px;
+  }
+  &__pagination .pagination__tableList {
+    min-height: 250px;
+    text-indent: 20px;
+  }
+  //Строчки
+  &__tableList .objectBlock {
+    position: relative;
+    background-color: rgba(72, 144, 226, 0.774);
+    color: rgb(26, 25, 25);
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  //Кнопки вперед/назад
+  &__pageButton {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    // background-color: red;
+    border-radius: 22px;
+    // position: relative;
+  }
+  //Пагинатор, целиком
+&__pagination-block {
+  text-align: center;
+  display: flex;
+  width: 280px;
+  height: 40px;
+}
+//Кнопки страниц пагинатора
+&__pagination-block span {
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  border-radius: 22px;
+}
+//Кнопки вперед-назад
+&__pagination-block .pagination__pageButton {
+  background-color: rgb(156, 9, 58);
+  color: rgba(18, 46, 207, 0.774);
+  position: relative;
+}
+&__pagination-block .pagination__pageButton::after {
+  position: absolute;
+  left: 8px;
+  bottom: 5px;
+}
+&__pagination-block span:hover {
+  cursor: pointer;
+}
+&__note {
+  padding-top: 20px;
+}
+//Кнопки страниц пагинатора
+&__pagination .clickPageNumber {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  // padding-top: 10px;
+}
+&__pagination-block #button_next::after {
+  content: url("./assets/arrow_forward.png");
+}
+&__pagination-block #button_prev::after {
+  content: url("./assets/arrow_back.png");
+}
+&__pagination .halfOpacity {
+  opacity: 0.5;
+}
+&__pagination .zeroOpacity {
+  opacity: 0;
+}
+&__pagination .active {
+  color: #66D2EA;
+}
+&__pagination .selected_page {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  opacity: 1;
+  color: white;
+}
+
+}
+
+  
+
+

@@ -1,0 +1,117 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Cards
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap")
+        link(rel="stylesheet" type="text/css" href="./library/datepicker.css")
+        link(rel="stylesheet" type="text/css" href="template.css")
+        link(rel="stylesheet" type="text/css" href="cards.css")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    body
+        mixin searchingMenu
+            .searching-menu
+                include ./templates/template.pug
+                //-Надпись Найдем номера под ваши пожелания
+                .searching-menu__title.project__geometry Найдем номера под ваши пожелания
+                //-Выбор даты въезда и выезда
+                .schedule.project__geometry
+                    .schedule__arriving
+                        +inputSmall('въезд', 'ДД.ММ.ГГГГ')
+                    .schedule__departure
+                        +inputSmall('выезд', 'ДД.ММ.ГГГГ')
+                //-Выбор количества гостей
+                .guests.project__geometry
+                    +inputBig('гости', 'Сколько гостей')
+                //-Стандартная кнопка "подобрать номер" 
+                button.project__button.project__geometry подобрать номер    
+        mixin bookingMenu
+            .booking-menu
+                //-Первая строчка меню
+                .booking-menu__title.project__geometry
+                    span.booking-menu__title-one №888
+                    span.booking-menu__title-two люкс
+                    span.booking-menu__title-three 9900Р в сутки
+                //-Выбор даты въезда и выезда
+                .schedule.project__geometry.project__geometry
+                    .schedule__arriving
+                        +inputSmall('въезд', 'ДД.ММ.ГГГГ')     
+                    .schedule__departure
+                        +inputSmall('выезд', 'ДД.ММ.ГГГГ')     
+                //-Выбор количества гостей
+                .guests.project__geometry
+                        +inputBig('гости', 'Сколько гостей')
+                //-Отображение рассчетов по услугам
+                ul.booking-menu__calculation.project__geometry
+                    li 9 990₽ х 4 суток <span class="area">39 960₽</span>
+                    li Сбор за услуги: скидка 2 179₽ <span class="area">0₽</span>
+                    li Сбор за дополнительные услуги <span class="area">300₽</span>
+                //-Отображение итоговой суммы
+                .booking-menu__total.project__geometry Итого<span class="booking-menu__value">38081R</span>
+                //-Стандартная кнопка "Забронировать"   
+                button.project__button.project__geometry забронировать  
+        mixin registrationMenu
+            .registration-menu
+                //- include ..templates/template.pug
+                //-Надпись "Регистрация аккаунта"
+                .registration-menu__header.project__geometry Регистрация аккаунта
+                //-Здесь вводят свое имя и фамилию   
+                .registration-menu__namesurname.project__geometry
+                    .registration-menu__workfield
+                    +inputTwice("Имя", "Фамилия")
+                //-Выбор пола
+                .registration-menu__genderbox.project__geometry
+                    +radioButtons
+                //-Здесь вводят дату рождения
+                .registration-menu__datebirth.project__geometry
+                    .registration-menu__textboard дата рождения
+                    .registration-menu__date.registration-menu__person
+                        input.registration-menu__input(type="text" placeholder="ДД.ММ.ГГГГ")
+                //-Данные для входа в сервис. Здесь вводят Email и пароль
+                .registration-menu__entrance-dates.project__geometry
+                    .registration-menu__textboard данные для входа в сервис
+                    .registration-menu__workfield
+                        +inputTwice("Имя", "Фамилия")     
+                //-Здесь можно включить/выключить получение спецпредложения
+                .registration-menu__specialsuggest.project__geometry
+                    +toggleButtons
+                //-Стандартная кнопка "перейти к оплате"
+                button.project__button.project__geometry перейти к оплате
+                //-Альтернативная кнопка "войти"
+                .registration-menu__footer.project__geometry
+                    .registration-menu__account Уже есть аккаунт на Toxin
+                    button.registration-menu__enter войти
+            //- script(src="template.js")
+        mixin entranceMenu
+            .entrance-menu
+                //- include ..templates/template.pug    
+                //-Надпись "Войти"
+                .entrance-menu__header.project__geometry Войти
+                //-Здесь вводят Email и пароль
+                .workfield.project__geometry
+                    +inputTwice("Email", "Пароль")
+                //-Стандартная кнопка "Войти"
+                button.project__button.project__geometry войти
+                //-Альтернативная кнопка "Войти"
+                .entrance-menu__footer
+                    .entrance-menu__account Уже есть аккаунт на Toxin
+                    button.entrance-menu__enter войти
+        mixin datepickerMenu
+            .datepicker__container
+                div(data-range="true" data-multiple-dates-separator=" - " class="datepicker-here")
+                .datepicker__footer
+                    .datepicker__clear-signboard очистить
+                    .datepicker__use-signboard применить
+    .cards__wrapper
+        .cards__column
+            +searchingMenu 
+            +registrationMenu
+        .cards__column
+            +bookingMenu 
+            +entranceMenu  
+        .cards__column
+            +datepickerMenu
+    script(src="./library/jquery.js")
+    script(src="./library/datepicker.js") 

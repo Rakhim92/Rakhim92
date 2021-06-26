@@ -1,0 +1,113 @@
+//Подключен также другой файл разметки(template.pug), содержащий набор шаблонов в виде миксинов
+//-Стандартный инпут со стрелкой "вниз", размером 320 * 44, и текстом над инпутом
+mixin inputBig(a, b, c)
+    .inputBig
+        .inputBig__textboard #{a}
+        label.inputBig__signboard
+            input.inputBig__signboard-content(class=c)(type="text" maxlength="20")(class=attributes.class placeholder=b)
+//-Стандартный инпут со стрелкой "вниз", размером 150 * 44, и текстом над инпутом
+mixin inputSmall(a, b, c)
+    .inputSmall
+        .inputSmall__textboard #{a}
+        label.inputSmall__signboard
+            input.inputSmall__signboard-content(class=c)(type="text" maxlength="20")(class=attributes.class placeholder=b)
+//-Два связанных стандартных инпутов с размером 320 * 44, без текста и стрелки
+mixin inputTwice(up, down)
+    .inputTwice__email.inputTwice__person
+        input.inputTwice__input-content(type="text" maxlength="20")(class=attributes.class placeholder=up)
+    .inputTwice__password.inputTwice__person
+        input.inputTwice__input-content(type="text" maxlength="20")(class=attributes.class placeholder=down)
+//-Стандартный инпут размером 320 * 44, без текста и стрелки
+mixin inputBigwithoutArrow(b, c)  
+    .inputBigwithoutArrow
+        //- .inputBigwithoutArrow__textboard #{a}
+        label.inputBigwithoutArrow__signboard
+            input.inputBigwithoutArrow__signboard-content(class=c)(type="text" maxlength="20")(class=attributes.class placeholder=b)
+//-Дропдаун, в котором можно указать количество гостей(взрослых, детей, младенцев)
+mixin dropdownFirst
+    .dropdown__container
+        +inputBigwithoutArrow('вопрос?', 'dropdown__btn')
+        .dropdown__contentMenu#originalMenu
+            .dropdown__main
+                .dropdown__line 
+                    .dropdown__unit взрослые
+                    .dropdown__minus.one
+                    .dropdown__number 0
+                    .dropdown__plus.one
+                .dropdown__line 
+                    .dropdown__unit дети
+                    .dropdown__minus.two
+                    .dropdown__number 0
+                    .dropdown__plus.two
+                .dropdown__line 
+                    .dropdown__unit младенцы
+                    .dropdown__minus.three
+                    .dropdown__number 0
+                    .dropdown__plus.three
+            .dropdown__footer
+                span.dropdown__clean очистить
+                span.dropdown__use применить
+//-Рейнджслайдер(ползунок)
+mixin rangeSliderFirst
+    span.range-slider__multi-range  
+        input(type="range" min="0" max="10" value="0" id="range-slider__upper")
+        input(type="range" min="0" max="10" value="0" id="range-slider__lower")
+    span.range-slider__displays
+        span#range-slider__display1 0
+        span#range-slider__display2 0
+//-Радиобаттон "мужчина/женщина"
+mixin radioButtons
+    label.radio-buttons__container Мужчина 
+        input(class="radio-buttons__input" type="radio" checked="checked" name="radio")
+        span.radio-buttons__checkmark
+    label.radio-buttons__container Женщина
+        input(class="radio-buttons__input" type="radio" name="radio")
+        span.radio-buttons__checkmark
+//-Тоглбаттон(переключатель) "вкл/выкл"
+mixin toggleButtons
+    .toggle-buttons__wrapper
+        .toggle-buttons__toggle.toggle-buttons__checkcross 
+            input(class="toggle-buttons__input" id="checkcross" type="checkbox")
+            label(class="toggle-buttons__toggle-item" for="checkcross")
+                .toggle-buttons__check
+        .toggle-buttons__text Получать спецпредложения
+//-Сердечки
+mixin likeButtons
+    .like-buttons__wrapper
+        .like-buttons__frame
+            .like-buttons__heart
+                i.fa.fa-heart
+            .like-buttons__counter 0
+        .like-buttons__frame
+            .like-buttons__heart
+                i.fa.fa-heart
+            .like-buttons__counter 0
+//-Чекбокс "Можно курить/можно с питомцами/можно пригласить гостей"
+mixin checkBoxFirst
+    .checkbox-buttons__title Checkbox checkbox_buttons
+    label.checkbox-buttons__container Можно курить
+        input(type="checkbox" checked="checked")
+        span.checkbox-buttons__checkmark 
+    label.checkbox-buttons__container Можно c питомцами
+        input(type="checkbox")
+        span.checkbox-buttons__checkmark 
+    label.checkbox-buttons__container Можно пригласить гостей (10 человек)
+        input(type="checkbox")
+        span.checkbox-buttons__checkmark 
+//-Пагинация 
+mixin paginationFirst
+    .pagination__pagination
+        .pagination__tableList#listingTable
+        .pagination__pagination-block
+            span.pagination__pageButton.pagination__outline-none#button_prev
+            span.pagination__outline-none#page_number
+            span.pagination__pageButton.pagination__outline-none#button_next
+        .pagination__note 1 – 12 из 100+ вариантов аренды
+//- +dropdownFirst
+//- +inputBig('', 'табличка')
+//- +rangeSliderFirst
+//- +radioButtons
+//- +toggleButtons
+//- +likeButtons
+//- +checkBoxFirst
+//- +paginationFirst
